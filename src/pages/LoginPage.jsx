@@ -19,8 +19,8 @@ const LoginPage = () => {
             const res = await login(formData.email, formData.password);
             if (res.success) {
                 toast.success(`Welcome back, ${res.data.name}!`);
-                if (res.data.role === 'admin') navigate('/admin/users');
-                else if (res.data.role === 'instructor') navigate('/instructor/courses');
+                if (res.data.role === 'admin') navigate('/admin/reports');
+                else if (res.data.role === 'instructor') navigate('/instructor/dashboard');
                 else navigate('/student/my-courses');
             } else {
                 toast.error(res.message);

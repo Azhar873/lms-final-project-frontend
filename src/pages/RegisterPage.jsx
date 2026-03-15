@@ -35,7 +35,7 @@ const RegisterPage = () => {
             const res = await register(registerData);
             if (res.success) {
                 toast.success('Account created successfully! Welcome to LearnHub.');
-                if (res.data.role === 'instructor') navigate('/instructor/courses');
+                if (res.data.role === 'instructor') navigate('/instructor/dashboard');
                 else navigate('/student/my-courses');
             } else {
                 toast.error(res.message);
